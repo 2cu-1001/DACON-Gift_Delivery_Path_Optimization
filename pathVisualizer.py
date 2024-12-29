@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-from utils import Node
-from path import Path
+from path import Path, Node
+
 
 def visualize_path(path):
     depot = (0, 0) 
@@ -20,4 +20,3 @@ def visualize_path(path):
     plt.grid()
     plt.legend()
     plt.show()
-

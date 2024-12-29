@@ -5,6 +5,14 @@ import copy
 import random
 
 
+class Node:
+    def __init__(self, id, xpos, ypos, demand):
+        self.id = id
+        self.xpos = xpos
+        self.ypos = ypos
+        self.demand = demand
+        
+        
 class Path:
     def __init__(self, init_path=None):
         self.path = []

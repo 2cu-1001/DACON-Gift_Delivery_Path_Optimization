@@ -3,8 +3,7 @@ import random
 import math
 import copy
 from tqdm import tqdm
-from utils import Node
-from path import Path
+from path import Path, Node
 import matplotlib.pyplot as plt
 
 

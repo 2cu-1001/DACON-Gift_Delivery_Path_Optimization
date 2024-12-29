@@ -1,8 +1,7 @@
 import pandas as pd
 import numpy as np
 import csv
-from utils import Node
-from path import Path
+from path import Path, Node
 
 
 class DataSet:

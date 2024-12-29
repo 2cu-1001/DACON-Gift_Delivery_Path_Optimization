@@ -1,5 +1,6 @@
 import math
 from itertools import permutations
+from path import Path, Node
 
 
 def calc_dist(x1, y1, x2, y2):
@@ -51,11 +52,3 @@ def make_group_nodes_order_optimal(group):
             min_dist = cur_dist
             
     return opt_group
-    
-
-class Node:
-    def __init__(self, id, xpos, ypos, demand):
-        self.id = id
-        self.xpos = xpos
-        self.ypos = ypos
-        self.demand = demand

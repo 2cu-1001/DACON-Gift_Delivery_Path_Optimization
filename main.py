@@ -1,6 +1,6 @@
 from dataset import DataSet
-from path import Path
-from utils import Node, make_group_nodes_order_optimal
+from path import Path, Node
+from utils import make_group_nodes_order_optimal
 from simulatedAnnealing import SimulatedAnnealing
 from pathVisualizer import visualize_path
 import utils
@@ -13,7 +13,7 @@ def main():
     delta1 = 0.9995
     delta2 = 0.99
     const = 2000
-    max_iter = 100000
+    max_iter = 1000000
     target_cost = 2000
     #Simulated Annealing Setting
     
