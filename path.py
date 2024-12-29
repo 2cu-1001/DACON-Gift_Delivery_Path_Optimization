@@ -143,7 +143,6 @@ class Path:
                 # print("merge failed : empty src list")
                 
             
-            
         elif neighbor_type == 8:
             idx = random.randint(0, len(neighbor_path) - 1)
             group = neighbor_path[idx]
