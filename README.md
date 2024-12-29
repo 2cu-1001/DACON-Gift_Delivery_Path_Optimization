@@ -1,11 +1,10 @@
-# DACON-Gift_Delivery_Route_Optimization
+# DACON-Gift_Delivery_Route_Optimization #
 Delivery Path Optimization using Simulated Annealing
-====================================================
+
 
 ## Competition Page ##
 
 https://dacon.io/competitions/official/236437/overview/description
-
 
 
 # Installation #
