@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 class SimulatedAnnealing():
-    def __init__(self, T_init, T_final, delta1, delta2, const, max_iter, init_sate, target_cost):
+    def __init__(self, T_init, T_final, delta1, delta2, const, max_iter, init_sate, target_cost, rollback_iter=10000):
         self.T = T_init
         self.T_init = T_init
         self.T_final = T_final
@@ -17,6 +17,7 @@ class SimulatedAnnealing():
         self.max_iter = max_iter
         self.iter_cnt = 0
         self.target_cost = target_cost
+        self.rollback_iter = rollback_iter
         self.cur_state = Path(init_sate.path)
         self.best_sate = Path(init_sate.path)
         self.const = const
@@ -48,7 +49,7 @@ class SimulatedAnnealing():
                 if self.cur_state.tot_cost < self.best_sate.tot_cost:
                     self.best_sate = copy.deepcopy(self.cur_state)
                     pre_best_cost_iter = iter
-                elif iter - pre_best_cost_iter > self.max_iter * 0.002:
+                elif iter - pre_best_cost_iter > self.rollback_iter:
                     self.cur_state = copy.deepcopy(self.best_sate)  
                     pre_best_cost_iter = iter
                 
