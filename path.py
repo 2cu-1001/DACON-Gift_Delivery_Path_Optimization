@@ -49,8 +49,7 @@ class Path:
                     group.append(towns[neighbor_idx])
                     group_demand += demands[neighbor_idx]
                     visited.add(neighbor_idx)
-                else:
-                    break
+                else: break
             
             if group:
                 self.path.append(group)
@@ -71,11 +70,9 @@ class Path:
 
                 if sum(node.demand for node in new_group) <= 25:
                     neighbor_path[src_idx] = new_group
-                else:
-                    pass
+                else: pass
                     # print("2opt failed : demand cap")
-            else:
-                pass
+            else: pass
                 # print("2opt failed : too few nodes")
         
         
@@ -94,11 +91,9 @@ class Path:
                     sum(node.demand for node in new_dst_group) <= 25):
                     neighbor_path[src_idx] = new_src_group
                     neighbor_path[dst_idx] = new_dst_group
-                else:
-                    pass
+                else: pass
                     # print("segment swap failed : demand cap")
-            else:
-                pass
+            else: pass
                 # print("segment swap failed : too few nodes")
                 
         
@@ -112,11 +107,9 @@ class Path:
                     neighbor_path[dst_idx].append(node)
                     if len(neighbor_path[src_idx]) == 0:
                         neighbor_path.pop(src_idx)
-                else:
-                    pass
+                else: pass
                     # print("merge failed : demand cap")
-            else:
-                pass
+            else: pass
                 # print("merge failed : empty src list")
                 
                 
@@ -134,12 +127,9 @@ class Path:
                     neighbor_path[dst_idx].append(src_node)
                     neighbor_path[dst_idx].pop(dst_node_idx)
                     neighbor_path[src_idx].append(dst_node)
-
-                else:
-                    pass
+                else: pass
                     # print("merge failed : demand cap")
-            else:
-                pass
+            else: pass
                 # print("merge failed : empty src list")
                 
             
@@ -149,9 +139,7 @@ class Path:
             if len(group) <= 6 and len(group) > 1:
                 opt_group = utils.make_group_nodes_order_optimal(group)
                 neighbor_path[idx] = opt_group
-                
-            else:
-                pass
+            else: pass
                 # print("make optimal failed : too many nodes")
         
         return neighbor_path
