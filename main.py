@@ -7,7 +7,7 @@ from pathVisualizer import visualize_path
 import utils
 
 
-def main(T, T_final, delta1, delta2, const, max_iter, target_cost):
+def main(T, T_final, delta1, delta2, const, max_iter, target_cost, rollback_iter):
     data_path = "./data/data.csv"
     dataSet = DataSet(data_path)  
     nodes = dataSet.make_datas2nodes()
@@ -17,7 +17,7 @@ def main(T, T_final, delta1, delta2, const, max_iter, target_cost):
     print(f"initial path feasiblity : {utils.check_path_feasibility(path.path)}")
     
     simulator = SimulatedAnnealing(T_init=T, T_final=T_final, delta1=delta1, delta2=delta2, const=const,
-                                   max_iter=max_iter, init_sate=path, target_cost=target_cost, rollback_iter=10000)
+                                   max_iter=max_iter, init_sate=path, target_cost=target_cost, rollback_iter=rollback_iter)
     fin_path = simulator.training()
     
     for i, group in enumerate(fin_path.path):
@@ -33,13 +33,14 @@ def main(T, T_final, delta1, delta2, const, max_iter, target_cost):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--T", type=float, default=150000, help="Initial temperature.")
-    parser.add_argument("--T_final", type=float, default=0.01, help="Final temperature.")
-    parser.add_argument("--delta1", type=float, default=0.9995, help="Temperature decay rate1")
-    parser.add_argument("--delta2", type=float, default=0.99, help="Temperature decay rate2")
-    parser.add_argument("--const", type=int, default=5000, help="Constant factor for acceptance probability.")
-    parser.add_argument("--max_iter", type=int, default=1000000, help="Maximum number of iterations.")
-    parser.add_argument("--target_cost", type=float, default=2000, help="Target cost to achieve.")
+    parser.add_argument("--T", type=float, default=150000)
+    parser.add_argument("--T_final", type=float, default=0.01)
+    parser.add_argument("--delta1", type=float, default=0.9995)
+    parser.add_argument("--delta2", type=float, default=0.99)
+    parser.add_argument("--const", type=int, default=5000)
+    parser.add_argument("--max_iter", type=int, default=1000000)
+    parser.add_argument("--target_cost", type=float, default=2000)
+    parser.add_argument("--rollback_iter", type=float, default=20000)
 
     args = parser.parse_args()
 
@@ -50,5 +51,6 @@ if __name__ == "__main__":
         delta2=args.delta2,
         const=args.const,
         max_iter=args.max_iter,
-        target_cost=args.target_cost
+        target_cost=args.target_cost,
+        rollback_iter=args.rollback_iter
     )
