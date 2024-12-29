@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
-from utils import Node, Path
+from utils import Node
+from path import Path
 
 def visualize_path(path):
     depot = (0, 0) 

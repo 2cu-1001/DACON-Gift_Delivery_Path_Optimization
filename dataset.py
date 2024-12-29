@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 import csv
-from utils import Node, Path
+from utils import Node
+from path import Path
 
 
 class DataSet:
@@ -39,3 +40,4 @@ class DataSet:
                 writer.writerow([d])
             
         print("save submission file : done")
+    

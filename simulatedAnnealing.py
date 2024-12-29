@@ -3,7 +3,8 @@ import random
 import math
 import copy
 from tqdm import tqdm
-from utils import Node, Path
+from utils import Node
+from path import Path
 import matplotlib.pyplot as plt
 
 
@@ -30,7 +31,7 @@ class SimulatedAnnealing():
             for iter in range(1, self.max_iter + 1):
                 if self.T < self.T_final: break
                 
-                neighbor_type = random.randint(0, 2)
+                neighbor_type = random.randint(0, 8)
                 nxt_path = self.cur_state.make_neighbor_path(neighbor_type)
                 nxt_state = Path(nxt_path)
                 
@@ -54,7 +55,7 @@ class SimulatedAnnealing():
                     
                 self.cost_hist.append(self.cur_state.tot_cost)
                 self.best_cost_hist.append(self.best_sate.tot_cost)
-                pbar.set_postfix(cur_T = self.T, Cost=self.cur_state.tot_cost, Gorup_Cnt=len(self.cur_state.path), to_worse=to_worse_cnt)
+                pbar.set_postfix(cur_T = self.T, BestCost=self.best_sate.tot_cost, CurCost=self.cur_state.tot_cost, Gorup_Cnt=len(self.cur_state.path), to_worse=to_worse_cnt)
                 pbar.update(1)
             
         plt.plot(self.cost_hist)
