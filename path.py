@@ -35,15 +35,12 @@ class Path:
         max_capacity = 25  
 
         for idx in indices[0]:  
-            if idx in visited:
-                continue
-            
+            if idx in visited: continue
             group = []
             group_demand = 0
             
             for neighbor_idx in indices[0]: 
-                if neighbor_idx in visited:
-                    continue
+                if neighbor_idx in visited: continue
                 
                 if group_demand + demands[neighbor_idx] <= max_capacity:
                     group.append(towns[neighbor_idx])
