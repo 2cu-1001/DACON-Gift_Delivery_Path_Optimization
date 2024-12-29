@@ -8,11 +8,11 @@ import utils
 
 def main():
     #Simulated Annealing Setting
-    T = 100000
+    T = 150000
     T_final = 0.01
     delta1 = 0.9995
     delta2 = 0.99
-    const = 2000
+    const = 5000
     max_iter = 1000000
     target_cost = 2000
     #Simulated Annealing Setting
@@ -26,7 +26,7 @@ def main():
     print(f"initial path feasiblity : {utils.check_path_feasibility(path.path)}")
     
     simulator = SimulatedAnnealing(T_init=T, T_final=T_final, delta1=delta1, delta2=delta2, const=const,
-                                   max_iter=max_iter, init_sate=path, target_cost=target_cost)
+                                   max_iter=max_iter, init_sate=path, target_cost=target_cost, rollback_iter=10000)
     fin_path = simulator.training()
     
     for i, group in enumerate(fin_path.path):
