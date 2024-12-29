@@ -26,6 +26,7 @@ class SimulatedAnnealing():
     
     def training(self):
         to_worse_cnt = 0
+        pre_best_cost_iter = 0
         with tqdm(total=self.max_iter, desc="Training", unit="iter") as pbar:
             for iter in range(1, self.max_iter + 1):
                 if self.T < self.T_final: break
@@ -46,6 +47,10 @@ class SimulatedAnnealing():
                         
                 if self.cur_state.tot_cost < self.best_sate.tot_cost:
                     self.best_sate = copy.deepcopy(self.cur_state)
+                    pre_best_cost_iter = iter
+                elif iter - pre_best_cost_iter > self.max_iter * 0.002:
+                    self.cur_state = copy.deepcopy(self.best_sate)  
+                    pre_best_cost_iter = iter
                 
                 # improved_rate = (self.cur_state.tot_cost - self.target_cost) / (self.target_cost)
                 # if improved_rate > 0.01: self.T *= self.delta1
