@@ -20,3 +20,7 @@ https://dacon.io/competitions/official/236437/overview/description
 
 
 # Example output of SA #
+### loss hist ###
+
+
+### path visuallization ###
