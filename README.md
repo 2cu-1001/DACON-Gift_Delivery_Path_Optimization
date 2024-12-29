@@ -1,8 +1,10 @@
 # DACON-Gift_Delivery_Route_Optimization
+Delivery Path Optimization using Simulated Annealing
+====================================================
 
-# 대회 링크 #
+## Competition Page ##
 
-https://dacon.io/competitions/official/236437/mysubmission
+https://dacon.io/competitions/official/236437/overview/description
 
 
 
@@ -17,7 +19,7 @@ https://dacon.io/competitions/official/236437/mysubmission
 # Run #
 
     python main.py
-
+    python main.py --T <initial Temperature> --T_final <final Temperature> --const <constant for log scaling> --max_iter <max iterations>
 
 
 # Example output of SA #
