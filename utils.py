@@ -1,6 +1,5 @@
 import math
 from itertools import permutations
-from path import Path, Node
 
 
 def calc_dist(x1, y1, x2, y2):
