@@ -17,7 +17,7 @@ https://dacon.io/competitions/official/236437/overview/description
 # Run #
 
     python main.py --T <initial Temperature> --T_final <final Temperature> --const <constant for log scaling> --max_iter <max iterations>
-
+submission file will be generated => data/submission.csv
 
 # Example output of SA #
 ### loss hist ###
