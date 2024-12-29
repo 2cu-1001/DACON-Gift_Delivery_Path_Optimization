@@ -21,6 +21,7 @@ https://dacon.io/competitions/official/236437/overview/description
 
 # Example output of SA #
 ### loss hist ###
+![cost_hist](https://github.com/user-attachments/assets/81438805-47b8-413b-8d97-ed652c4febb9)
 
 
 ### path visuallization ###
