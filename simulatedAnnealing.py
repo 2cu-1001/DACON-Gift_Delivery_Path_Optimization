@@ -54,7 +54,7 @@ class SimulatedAnnealing():
                     
                 self.cost_hist.append(self.cur_state.tot_cost)
                 self.best_cost_hist.append(self.best_sate.tot_cost)
-                pbar.set_postfix(cur_T = self.T, BestCost=self.best_sate.tot_cost, CurCost=self.cur_state.tot_cost, Gorup_Cnt=len(self.cur_state.path), to_worse=to_worse_cnt)
+                pbar.set_postfix(cur_T = self.T, BestCost=self.best_sate.tot_cost, CurCost=self.cur_state.tot_cost, GorupCnt=len(self.cur_state.path), toWorse=to_worse_cnt)
                 pbar.update(1)
             
         plt.plot(self.cost_hist)
