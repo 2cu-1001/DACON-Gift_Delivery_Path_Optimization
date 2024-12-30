@@ -25,4 +25,4 @@ submission file will be generated => data/submission.csv
 
 
 ### path visuallization ###
-![path_visualization](https://github.com/user-attachments/assets/529828d9-d5e3-4845-8ab9-807430690056)
+![path_visualization](https://github.com/user-attachments/assets/9987e125-1d71-477e-ada9-81624f24f291)
