@@ -19,4 +19,5 @@ def visualize_path(path):
     plt.ylabel("Y Coordinate")
     plt.grid()
     plt.legend()
+    plt.savefig("./output/path_visualization.png")
     plt.show()

@@ -21,8 +21,8 @@ submission file will be generated => data/submission.csv
 
 # Example output of SA #
 ### loss hist ###
-![cost_hist](https://github.com/user-attachments/assets/c426fa4d-b874-4876-a4c0-f094c0d3afb3)
+![cost_hist](https://github.com/user-attachments/assets/81438805-47b8-413b-8d97-ed652c4febb9)
 
 
 ### path visuallization ###
-![path_visualization](https://github.com/user-attachments/assets/9987e125-1d71-477e-ada9-81624f24f291)
+![path_visualization](https://github.com/user-attachments/assets/529828d9-d5e3-4845-8ab9-807430690056)

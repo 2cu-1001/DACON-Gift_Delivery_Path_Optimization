@@ -24,7 +24,7 @@ def main(T, T_final, delta1, delta2, const, max_iter, target_cost, rollback_iter
         fin_path.path[i] = make_group_nodes_order_optimal(group)
     print(f"final path feasiblity : {utils.check_path_feasibility(fin_path.path)}")
 
-    save_path = "./data/submission.csv"
+    save_path = "./output/submission.csv"
     dataSet.save2submission(fin_path, save_path)
     visualize_path(fin_path)
     print(f"final cost : {fin_path.tot_cost}")
@@ -33,14 +33,14 @@ def main(T, T_final, delta1, delta2, const, max_iter, target_cost, rollback_iter
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--T", type=float, default=150000)
-    parser.add_argument("--T_final", type=float, default=0.01)
+    parser.add_argument("--T", type=float, default=1000000)
+    parser.add_argument("--T_final", type=float, default=1)
     parser.add_argument("--delta1", type=float, default=0.9995)
     parser.add_argument("--delta2", type=float, default=0.99)
-    parser.add_argument("--const", type=int, default=5000)
-    parser.add_argument("--max_iter", type=int, default=1000000)
+    parser.add_argument("--const", type=int, default=11000)
+    parser.add_argument("--max_iter", type=int, default=6000000)
     parser.add_argument("--target_cost", type=float, default=2000)
-    parser.add_argument("--rollback_iter", type=float, default=20000)
+    parser.add_argument("--rollback_iter", type=float, default=100000)
 
     args = parser.parse_args()
 

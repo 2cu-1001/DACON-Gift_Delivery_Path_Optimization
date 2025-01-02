@@ -1,6 +1,7 @@
 import utils
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
+from random import shuffle
 import copy 
 import random
 
@@ -50,7 +51,8 @@ class Path:
             
             if group:
                 self.path.append(group)
-        
+                
+        shuffle(self.path)
         self.calc_cur_cost()
 
 

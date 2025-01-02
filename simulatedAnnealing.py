@@ -65,5 +65,6 @@ class SimulatedAnnealing():
             
         plt.plot(self.cost_hist)
         plt.plot(self.best_cost_hist)
+        plt.savefig("./output/cost_hist.png")
         plt.show()
         return self.best_sate
