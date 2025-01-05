@@ -57,7 +57,7 @@ class Path:
 
 
     def make_neighbor_path(self, neighbor_type):
-        neighbor_path = copy.deepcopy(self.path)
+        neighbor_path = [group[:] for group in self.path]
         
         
         if neighbor_type >= 1 and neighbor_type <= 2: 
