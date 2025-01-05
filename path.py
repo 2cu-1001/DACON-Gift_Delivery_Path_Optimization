@@ -60,7 +60,7 @@ class Path:
         neighbor_path = [group[:] for group in self.path]
         
         
-        if neighbor_type >= 1 and neighbor_type <= 2: 
+        if neighbor_type >= 0 and neighbor_type <= 0: 
             src_idx = random.randint(0, len(neighbor_path) - 1)
             group = neighbor_path[src_idx]
             if len(group) > 2:
@@ -75,7 +75,7 @@ class Path:
                 # print("2opt failed : too few nodes")
         
         
-        elif neighbor_type >= 3 and neighbor_type <= 4:
+        elif neighbor_type >= 1 and neighbor_type <= 3:
             src_idx, dst_idx = random.sample(range(len(neighbor_path)), 2)
             src_group, dst_group = neighbor_path[src_idx], neighbor_path[dst_idx]
             
